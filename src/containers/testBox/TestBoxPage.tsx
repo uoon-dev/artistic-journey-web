@@ -1,19 +1,20 @@
 import React from "react";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, shaderMaterial } from "@react-three/drei";
 import CanvasLayout from "../../components/common/CanvasLayout";
 
-function ParticlesPage() {
+function TestBoxPage() {
+  const material = shaderMaterial({}, ``, ``);
   return (
     <div>
       <CanvasLayout>
         <OrbitControls makeDefault />
         <mesh>
+          <meshBasicMaterial color={"orange"} />
           <boxGeometry args={[2, 2, 2]} />
-          {/*<meshBasicMaterial color={"orange"} />*/}
         </mesh>
       </CanvasLayout>
     </div>
   );
 }
 
-export default ParticlesPage;
+export default TestBoxPage;
